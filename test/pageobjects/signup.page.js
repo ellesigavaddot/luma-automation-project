@@ -1,3 +1,4 @@
+
 const Page = require('./page');
 
 /**
@@ -59,7 +60,9 @@ class SignupPage extends Page {
         return $('div.mage-error')
     }
 
-    
+    get myAccountHeader(){
+        return $('h1.page-title')
+    }
 
     /**
      * a method to encapsule automation code to interact with the page
