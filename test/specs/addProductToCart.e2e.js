@@ -2,9 +2,10 @@
 const womenProductPage = require('../pageobjects/womenProduct.page')
 //const gearProductPage = require('../pageobjects/gearProduct.page')
 const signInPage = require('../pageobjects/signin.page')
+const shoppingCartPage = require('../pageobjects/cart.page')
 
 
-describe.only("Add Product to Cart", async () => {
+describe("Add Product to Cart", async () => {
     it('should add woman product to cart', async () =>{
        await signInPage.open()
        await signInPage.loginToLuma("test123@exampletest.com","Password1")
@@ -13,10 +14,7 @@ describe.only("Add Product to Cart", async () => {
        await womenProductPage.productItemLink.click()
        await womenProductPage.addItemToCart("4");
        await expect(womenProductPage.successMessage).toHaveTextContaining('You added Circe Hooded Ice Fleece to your shopping cart.')
-
+        //check cart and see if product is there
 
     })
-    // it('should add gear to cart', async() => {
-
-    // })
 })

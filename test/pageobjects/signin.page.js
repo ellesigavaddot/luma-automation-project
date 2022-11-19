@@ -22,9 +22,9 @@ class SigninPage extends Page {
    }
 
    async loginToLuma(email,password){
-        this.inputEmailField.setValue(email);
-        this.inputPasswordField.setValue(password);
-        this.signInButton.click();
+        await this.inputEmailField.setValue(email);
+        await this.inputPasswordField.setValue(password);
+        await this.signInButton.click();
    }
 
     open () {

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx wdio run wdio.conf.js"
+    "test": "npx wdio run wdio.conf.js",
+    "add-product-to-cart": "npm run test -- --spec ./test/specs/addProductToCart.e2e.js",
+    "purchase-product": "npm run test -- --spec ./test/specs/purchaseProduct.e2e.js"
   },
   "keywords": [],
   "author": "",

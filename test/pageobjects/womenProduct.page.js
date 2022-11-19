@@ -67,7 +67,7 @@ class womenProductPage extends Page{
     }
 
     async addItemToCart(quantity){
-        await this.smallSizeOfItem.click();
+        await this.medSizeOfItem.click();
         await this.pinkColorOfItem.click();
         await this.quantityOfItem.clearValue();
         await this.quantityOfItem.setValue(quantity);

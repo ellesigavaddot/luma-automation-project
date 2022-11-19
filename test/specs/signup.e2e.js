@@ -2,7 +2,7 @@ const signupPage = require("../pageobjects/signup.page")
 const { faker } = require('@faker-js/faker')
 const lunaSignupData = require("../data/lunaSignupData")
 
-describe.skip("Sign up - Unhappy Path", async () => {
+describe("Sign up - Unhappy Path", async () => {
     for(const record of lunaSignupData){
         it(`should not create account with missing ${record.missingField}`, async () =>{
             await signupPage.open();
@@ -19,7 +19,7 @@ describe.skip("Sign up - Unhappy Path", async () => {
     }
 
 })
-describe.skip("Sign up - Happy Path", async () => {
+describe("Sign up - Happy Path", async () => {
     it('should create account with valid user inputs', async () => {
         await signupPage.open()
 
