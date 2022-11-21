@@ -5,4 +5,4 @@ To run test for each of the acenarios, the commands are as follows:
 3. npm run sign-up
 
 Cross Broswer Testing
-1. Uncomment chrome or firefox on the wdio.cong.js file (lines 56 & 66)
+1. Uncomment chrome or firefox on the wdio.cong.js file (lines 65 & 66)
