@@ -1,5 +1,3 @@
-
-const { default: $ } = require('webdriverio/build/commands/browser/$')
 const Page = require('./page')
 
 class orderPage extends Page{
@@ -17,7 +15,7 @@ class orderPage extends Page{
     }
 
     get recentOrder(){
-        return $$('[data-th="Order #"]')[0];
+        return $('tbody > tr:nth-child(1)');
     }
 
 

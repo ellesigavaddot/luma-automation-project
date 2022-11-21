@@ -62,7 +62,8 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName:'firefox',
+        //browserName: 'chrome',
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -122,14 +123,15 @@ exports.config = {
     //         installArgs: { drivers }, // drivers to install
     //         args: { drivers },// drivers to use
     //     }],
-    services: [
-        ['chromedriver', {
-            logFileName: 'wdio-chromedriver.log', // default
-            outputDir: 'driver-logs', // overwrites the config.outputDir
-            args: ['--silent']
-        }],
+    services: ['selenium-standalone'],
+    // services: [
+    //     ['chromedriver', {
+    //         logFileName: 'wdio-chromedriver.log', // default
+    //         outputDir: 'driver-logs', // overwrites the config.outputDir
+    //         args: ['--silent']
+    //     }],
         
-      ],
+    //   ],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
