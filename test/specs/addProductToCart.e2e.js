@@ -14,7 +14,5 @@ describe("Add Product to Cart", async () => {
        await womenProductPage.productItemLink.click()
        await womenProductPage.addItemToCart("4");
        await expect(womenProductPage.successMessage).toHaveTextContaining('You added Circe Hooded Ice Fleece to your shopping cart.')
-        //check cart and see if product is there
-
     })
 })

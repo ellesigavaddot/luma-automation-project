@@ -1,9 +1,10 @@
+
 const Page = require('../pageobjects/page')
 
 class paymentPage extends Page{
 
     get placeOrderButton(){
-        return $('button.checkout')
+        return $('button=Place Order')
     }
 
     get orderSuccessMessage(){
@@ -12,12 +13,9 @@ class paymentPage extends Page{
 
 
     async finalPlaceOrder(){
-        await this.placeOrderButton.click();
+        return this.placeOrderButton.click();
     }
 
-
-
-    
 
     open(){
         return super.open('checkout/#payment');

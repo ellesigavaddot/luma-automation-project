@@ -1,3 +1,9 @@
+const drivers = {
+    chrome: { version: '107.0.5304.110' }, // https://chromedriver.chromium.org/
+    firefox: { version: '0.32.0' }, // https://github.com/mozilla/geckodriver/releases
+    chromiumedge: { version: '107.0.1418.52' } // https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+}
+
 exports.config = {
     //
     // ====================
@@ -110,13 +116,19 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    //services: ['selenium-standalone'],
+    // services:
+    //     ['selenium-standalone', {
+    //         logPath: 'logs',
+    //         installArgs: { drivers }, // drivers to install
+    //         args: { drivers },// drivers to use
+    //     }],
     services: [
         ['chromedriver', {
             logFileName: 'wdio-chromedriver.log', // default
             outputDir: 'driver-logs', // overwrites the config.outputDir
             args: ['--silent']
-        }]
+        }],
+        
       ],
     
     // Framework you want to run your specs with.
@@ -202,8 +214,9 @@ exports.config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {Object}         browser      instance of created browser/device session
      */
-    // before: function (capabilities, specs) {
-    // },
+    before: function (capabilities, specs) {
+        browser.setTimeout({ 'pageLoad': 10000 })
+    },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
